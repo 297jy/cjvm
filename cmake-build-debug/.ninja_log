@@ -1,0 +1,12 @@
+# ninja log v5
+2	245	6980432311780953	CMakeFiles/cjvm.dir/main.cpp.obj	314f8ca2ba010599
+267	342	6980833912246887	cjvm.exe	2c3544d2b3250cd6
+2	267	6980833911506206	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
+0	471	6981277653789074	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
+2	220	6981277783717206	CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj	bd1db2c9944e149d
+2	226	6981277966584500	CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj	3418c06d63e0d567
+227	389	6981277968195963	cjvm.exe	786ef438e6fe3f3e
+2	312	6981278258812070	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
+312	394	6981278259612798	cjvm.exe	786ef438e6fe3f3e
+2	309	6981278369497250	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
+309	394	6981278370327990	cjvm.exe	786ef438e6fe3f3e
