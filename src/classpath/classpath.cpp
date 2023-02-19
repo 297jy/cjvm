@@ -3,8 +3,13 @@
 //
 
 #include "classpath.h"
+#include "str.h"
+using namespace std;
 
-ClassPathEntry* ClassPathEntry::newEntry(string path) {
 
+ClassPathEntry *newClasspathEntry(const string &path) {
+    if (contain(path, PATH_LIST_SEPARATOR)) {
+        return new CompositeEntry(path);
+    }
     return nullptr;
 }

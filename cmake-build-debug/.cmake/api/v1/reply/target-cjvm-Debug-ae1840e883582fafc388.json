@@ -68,7 +68,10 @@
 			[
 				0,
 				3,
-				4
+				4,
+				5,
+				9,
+				10
 			]
 		}
 	],
@@ -107,7 +110,10 @@
 			[
 				0,
 				3,
-				4
+				4,
+				5,
+				9,
+				10
 			]
 		},
 		{
@@ -121,7 +127,10 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -153,6 +162,39 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/classpath/composite_entry.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/str.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/file.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/zip.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/str.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/file.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/zip.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

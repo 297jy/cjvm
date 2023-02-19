@@ -5,13 +5,28 @@
 
 #include "classpath.h"
 #include <vector>
+#include "str.h"
 
-class CompositeEntry: ClassPathEntry {
-public:
-    char* readClassPathEntry(string pathList) override {
-        //pathList.
-        return nullptr;
+using namespace std;
+
+CompositeEntry::CompositeEntry(const string &pathList) {
+    entries = new std::vector<ClassPathEntry*>();
+    vector<string> &paths = split_string(pathList, PATH_LIST_SEPARATOR);
+    for (const string &p: paths) {
+        ClassPathEntry *e = newClasspathEntry(p);
+        entries->push_back(e);
     }
-private:
-    vector<ClassPathEntry*>* items;
-};
+    delete &paths;
+}
+
+char *CompositeEntry::readClass(const std::string &className) {
+
+}
+
+std::string CompositeEntry::toString() {
+
+}
+
+CompositeEntry::~CompositeEntry() {
+    delete entries;
+}

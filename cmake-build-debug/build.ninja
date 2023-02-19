@@ -70,6 +70,27 @@ build CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj: CXX_COMPILER__c
   OBJECT_DIR = CMakeFiles\cjvm.dir
   OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\classpath
 
+build CMakeFiles/cjvm.dir/src/common/str.cpp.obj: CXX_COMPILER__cjvm_Debug C$:/project/cjvm/src/common/str.cpp || cmake_object_order_depends_target_cjvm
+  DEP_FILE = CMakeFiles\cjvm.dir\src\common\str.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/project/cjvm/include
+  OBJECT_DIR = CMakeFiles\cjvm.dir
+  OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\common
+
+build CMakeFiles/cjvm.dir/src/common/file.cpp.obj: CXX_COMPILER__cjvm_Debug C$:/project/cjvm/src/common/file.cpp || cmake_object_order_depends_target_cjvm
+  DEP_FILE = CMakeFiles\cjvm.dir\src\common\file.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/project/cjvm/include
+  OBJECT_DIR = CMakeFiles\cjvm.dir
+  OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\common
+
+build CMakeFiles/cjvm.dir/src/common/zip.cpp.obj: CXX_COMPILER__cjvm_Debug C$:/project/cjvm/src/common/zip.cpp || cmake_object_order_depends_target_cjvm
+  DEP_FILE = CMakeFiles\cjvm.dir\src\common\zip.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/project/cjvm/include
+  OBJECT_DIR = CMakeFiles\cjvm.dir
+  OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\common
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cjvm
@@ -78,7 +99,7 @@ build CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj: CXX_COMPILER__c
 #############################################
 # Link the executable cjvm.exe
 
-build cjvm.exe: CXX_EXECUTABLE_LINKER__cjvm_Debug CMakeFiles/cjvm.dir/src/main.cpp.obj CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj
+build cjvm.exe: CXX_EXECUTABLE_LINKER__cjvm_Debug CMakeFiles/cjvm.dir/src/main.cpp.obj CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj CMakeFiles/cjvm.dir/src/common/str.cpp.obj CMakeFiles/cjvm.dir/src/common/file.cpp.obj CMakeFiles/cjvm.dir/src/common/zip.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cjvm.dir
