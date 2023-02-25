@@ -11,9 +11,12 @@
 
 class Zip {
 public:
-    Zip(const std::string& path);
+    explicit Zip(const std::string& path);
+    void refresh();
     std::string readFile(const std::string& relativeFilePath);
     std::vector<std::filesystem::path>* readFileList();
+    std::string getTempPath();
+    ~Zip();
 protected:
     bool decompression();
 private:

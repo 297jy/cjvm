@@ -71,7 +71,9 @@
 				4,
 				5,
 				9,
-				10
+				10,
+				11,
+				12
 			]
 		}
 	],
@@ -113,7 +115,9 @@
 				4,
 				5,
 				9,
-				10
+				10,
+				11,
+				12
 			]
 		},
 		{
@@ -195,6 +199,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/common/zip.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/classpath/wildcard_entry.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/classpath/jar_entry.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

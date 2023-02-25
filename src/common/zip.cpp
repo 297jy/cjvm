@@ -6,26 +6,29 @@
 #include "zip.h"
 #include <iostream>
 #include <algorithm>
+#include <ctime>
 
 using namespace std;
 
 Zip::Zip(const std::string &path) {
     originPath = path;
-    tempPath = TEMP_DIRECTORY + get_no_suffix_filename(path) + FILE_PATH_SEPARATOR;
+    time_t myt = time(nullptr);
+    tempPath =
+            TEMP_DIRECTORY + to_string(myt) + FILE_PATH_SEPARATOR + get_no_suffix_filename(path) + FILE_PATH_SEPARATOR;
     fileList = nullptr;
 }
 
 vector<filesystem::path> *Zip::readFileList() {
     if (fileList == nullptr) {
         decompression();
+        vector<filesystem::path> &files = read_all_file(tempPath);
+        fileList = &files;
     }
 
     auto *filenames = new vector<filesystem::path>();
-    vector<filesystem::path> &files = read_all_file(tempPath);
-    for (const auto &file: files) {
+    for (const auto &file: *fileList) {
         filenames->push_back(file);
     }
-    fileList = &files;
     return filenames;
 }
 
@@ -41,6 +44,20 @@ string Zip::readFile(const std::string &relativeFilePath) {
         }
     }
     return "";
+}
+
+void Zip::refresh() {
+    delete fileList;
+    fileList = nullptr;
+}
+
+string Zip::getTempPath() {
+    return tempPath;
+}
+
+Zip::~Zip() {
+    remove_directory(tempPath);
+    refresh();
 }
 
 bool Zip::decompression() {

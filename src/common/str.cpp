@@ -28,3 +28,26 @@ vector<string> &split_string(const string &str, const string &splits) {
 bool contain(const string &str, const string &substr) {
     return str.find(substr) != -1;
 }
+
+string join_string(std::vector<std::string> &src, const std::string &splits) {
+    string res;
+    if (src.empty()) return res;
+
+    auto it = src.begin();
+    res += *it;
+    for (it++; it != src.end(); it++) {
+        res += splits;
+        res += *it;
+    }
+    return res;
+}
+
+bool startsWith(const std::string &str, const std::string &prefix) {
+    return (str.rfind(prefix, 0) == 0);
+}
+
+bool endsWith(const std::string &str, const std::string &suffix) {
+    if (suffix.length() > str.length()) { return false; }
+
+    return (str.rfind(suffix) == (str.length() - suffix.length()));
+}
