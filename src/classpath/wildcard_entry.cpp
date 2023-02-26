@@ -15,7 +15,7 @@ void WildcardEntry::init(const std::string &path) {
     vector<filesystem::path> &files = read_all_file(path);
     for (auto &file: files) {
         // 将所有jar包都进行解压
-        if (endsWith(file.filename().string(), ".jar") || endsWith(file.filename().string(), ".JAR")) {
+        if (ends_with(file.filename().string(), ".jar") || ends_with(file.filename().string(), ".JAR")) {
             addEntry(newJarEntry(file.string()));
         }
     }

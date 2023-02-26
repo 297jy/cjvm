@@ -105,6 +105,20 @@ build CMakeFiles/cjvm.dir/src/classpath/jar_entry.cpp.obj: CXX_COMPILER__cjvm_De
   OBJECT_DIR = CMakeFiles\cjvm.dir
   OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\classpath
 
+build CMakeFiles/cjvm.dir/src/classpath/dir_entry.cpp.obj: CXX_COMPILER__cjvm_Debug C$:/project/cjvm/src/classpath/dir_entry.cpp || cmake_object_order_depends_target_cjvm
+  DEP_FILE = CMakeFiles\cjvm.dir\src\classpath\dir_entry.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/project/cjvm/include
+  OBJECT_DIR = CMakeFiles\cjvm.dir
+  OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\classpath
+
+build CMakeFiles/cjvm.dir/src/common/system.cpp.obj: CXX_COMPILER__cjvm_Debug C$:/project/cjvm/src/common/system.cpp || cmake_object_order_depends_target_cjvm
+  DEP_FILE = CMakeFiles\cjvm.dir\src\common\system.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/project/cjvm/include
+  OBJECT_DIR = CMakeFiles\cjvm.dir
+  OBJECT_FILE_DIR = CMakeFiles\cjvm.dir\src\common
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cjvm
@@ -113,7 +127,7 @@ build CMakeFiles/cjvm.dir/src/classpath/jar_entry.cpp.obj: CXX_COMPILER__cjvm_De
 #############################################
 # Link the executable cjvm.exe
 
-build cjvm.exe: CXX_EXECUTABLE_LINKER__cjvm_Debug CMakeFiles/cjvm.dir/src/main.cpp.obj CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj CMakeFiles/cjvm.dir/src/common/str.cpp.obj CMakeFiles/cjvm.dir/src/common/file.cpp.obj CMakeFiles/cjvm.dir/src/common/zip.cpp.obj CMakeFiles/cjvm.dir/src/classpath/wildcard_entry.cpp.obj CMakeFiles/cjvm.dir/src/classpath/jar_entry.cpp.obj
+build cjvm.exe: CXX_EXECUTABLE_LINKER__cjvm_Debug CMakeFiles/cjvm.dir/src/main.cpp.obj CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj CMakeFiles/cjvm.dir/src/common/str.cpp.obj CMakeFiles/cjvm.dir/src/common/file.cpp.obj CMakeFiles/cjvm.dir/src/common/zip.cpp.obj CMakeFiles/cjvm.dir/src/classpath/wildcard_entry.cpp.obj CMakeFiles/cjvm.dir/src/classpath/jar_entry.cpp.obj CMakeFiles/cjvm.dir/src/classpath/dir_entry.cpp.obj CMakeFiles/cjvm.dir/src/common/system.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cjvm.dir

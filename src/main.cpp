@@ -17,10 +17,10 @@ int main(int nArgc, char *argv[]) {
     //cout << "文件总个数: " << list->size() << endl;
     //cout << zip.readFile(R"(org\xml\sax\SAXNotSupportedException.java)") << endl;
 
-    //char *p;
-    //if ((p = getenv("JAVA_HOME"))) {
-        //cout << "JAVA_HOME: " << p << endl;
-    //}
+    char *p;
+    if ((p = getenv("JAVA_HOME"))) {
+        cout << "JAVA_HOME: " << p << endl;
+    }
 
     //cout<<contain("test", "t")<<endl;
     return 0;

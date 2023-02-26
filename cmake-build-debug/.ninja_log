@@ -1,12 +1,14 @@
 # ninja log v5
 2	245	6980432311780953	CMakeFiles/cjvm.dir/main.cpp.obj	314f8ca2ba010599
-1255	1607	6989996258306495	cjvm.exe	eddb0e7464bcbabd
-12	1126	6989996253522149	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
-4	904	6989996251300138	CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj	bd1db2c9944e149d
-33	908	6989996251350187	CMakeFiles/cjvm.dir/src/common/str.cpp.obj	493121031d30e186
+1367	1724	6990347730660806	cjvm.exe	c0a94d1be63e869
+3	1192	6990347725365914	CMakeFiles/cjvm.dir/src/main.cpp.obj	6e6078f58e0806ed
+9	1208	6990347725536056	CMakeFiles/cjvm.dir/src/classpath/classpath.cpp.obj	bd1db2c9944e149d
+25	974	6990347723193889	CMakeFiles/cjvm.dir/src/common/str.cpp.obj	493121031d30e186
 7	316	6981774869484397	CMakeFiles/cjvm.dir/src/common/GzParser.cpp.obj	22e023d5692912d2
-26	921	6989996251480295	CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj	3418c06d63e0d567
+19	1305	6990347726496949	CMakeFiles/cjvm.dir/src/classpath/composite_entry.cpp.obj	3418c06d63e0d567
 13	852	6981754844331538	CMakeFiles/cjvm.dir/src/common/zip/unzip.cpp.obj	3931c8242d5061d6
 17	275	6982597570016658	CMakeFiles/cjvm.dir/test/file_test.cpp.obj	cdca33f1a6e320b
-19	1254	6989996254813323	CMakeFiles/cjvm.dir/src/common/file.cpp.obj	5d5afc2c4370ecb4
-8	618	6983989341422502	CMakeFiles/cjvm.dir/src/common/zip.cpp.obj	1114f8836b49ccc
+14	1367	6990347727117524	CMakeFiles/cjvm.dir/src/common/file.cpp.obj	5d5afc2c4370ecb4
+30	1315	6990347726597046	CMakeFiles/cjvm.dir/src/common/zip.cpp.obj	1114f8836b49ccc
+35	1209	6990347725526048	CMakeFiles/cjvm.dir/src/classpath/jar_entry.cpp.obj	28dc8dd376f9c289
+41	1271	6990347726156636	CMakeFiles/cjvm.dir/src/classpath/wildcard_entry.cpp.obj	6e503936b96f9f2a

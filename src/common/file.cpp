@@ -39,6 +39,19 @@ bool remove_directory(const string &path) {
     return std::filesystem::remove_all(path) > 0;
 }
 
+bool exist(const string &path, bool isDirectory) {
+    std::error_code error;
+    auto file_status = std::filesystem::status(path, error);
+    if (error) {
+        return false;
+    }
+
+    if (!std::filesystem::exists(file_status)) {
+        return false;
+    }
+    return std::filesystem::is_directory(file_status) && isDirectory;
+}
+
 void get_all_file(const filesystem::path &p, vector<filesystem::path> &fileList) {
     filesystem::directory_entry entry(p);
     if (entry.status().type() != filesystem::file_type::directory) {
@@ -49,6 +62,14 @@ void get_all_file(const filesystem::path &p, vector<filesystem::path> &fileList)
     for (auto &it: list) {
         get_all_file(it.path(), fileList);
     }
+}
+
+std::string join_path(const std::string &base, std::initializer_list<const std::string> paths) {
+    filesystem::path p(base);
+    for (const auto & path : paths) {
+        p = p / path;
+    }
+    return p.string();
 }
 
 /**

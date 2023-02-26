@@ -23,6 +23,8 @@ public:
 class ClassPath {
 public:
 
+    std::string readClass(const std::string& className);
+
     void parseBootAndExtClasspath(const std::string &jreOption);
 
     void parseUserClasspath(const std::string &cpOption);
@@ -35,7 +37,22 @@ private:
 
 ClassPath *parse(const std::string &jreOption, const std::string &cpOption);
 
+std::string get_jre_dir(const std::string& jreOption);
+
 ClassPathEntry *newClasspathEntry(const std::string &path);
+
+class DirEntry : public ClassPathEntry {
+public:
+
+    void init(const std::string &path) override;
+
+    std::string readClass(const std::string &className) override;
+
+    std::string toString() override;
+
+private:
+    std::string baseDir;
+};
 
 class CompositeEntry : public ClassPathEntry {
 public:
@@ -78,5 +95,7 @@ private:
 ClassPathEntry *newJarEntry(const std::string &pathList);
 
 ClassPathEntry *newCompositeEntry(const std::string &pathList);
+
+ClassPathEntry *newWildcardEntry(const std::string &pathList);
 
 #endif //CJVM_CLASSPATH_H

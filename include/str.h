@@ -14,8 +14,8 @@ std::string join_string(std::vector<std::string> &src, const std::string &splits
 
 bool contain(const std::string &str, const std::string &substr);
 
-bool startsWith(const std::string &str, const std::string &prefix);
+bool starts_with(const std::string &str, const std::string &prefix);
 
-bool endsWith(const std::string &str, const std::string &suffix);
+bool ends_with(const std::string &str, const std::string &suffix);
 
 #endif //CJVM_STR_H
