@@ -28,6 +28,7 @@ vector<filesystem::path> *Zip::readFileList() {
     auto *filenames = new vector<filesystem::path>();
     for (const auto &file: *fileList) {
         filenames->push_back(file);
+        cout << "readFileList: " << file.string() << endl;
     }
     return filenames;
 }
@@ -36,10 +37,11 @@ string Zip::readFile(const std::string &relativeFilePath) {
     if (fileList == nullptr) {
         readFileList();
     }
-
+    cout << "relativeFilePath: " << relativeFilePath << endl;
     for (const auto &file: *fileList) {
         string path = file.string();
         if (file.string().find(relativeFilePath) != -1) {
+            cout << "find: " << file.string() << endl;
             return read_file(file.string());
         }
     }
@@ -61,8 +63,8 @@ Zip::~Zip() {
 }
 
 bool Zip::decompression() {
-    create_directory(tempPath);
-    string cmd = "tar -zxf " + originPath + " -C " + tempPath;
+    cout << "create directory: " << create_directory(tempPath) << endl;
+    string cmd = "tar -zxf \"" + originPath + "\" -C \"" + tempPath + "\"";
     cout << "cmd: " + cmd << endl;
     return ::system(cmd.c_str()) == 0;
 }

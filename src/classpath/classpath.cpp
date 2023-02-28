@@ -6,6 +6,7 @@
 #include "str.h"
 #include "file.h"
 #include "system.h"
+#include <iostream>
 
 using namespace std;
 
@@ -72,9 +73,12 @@ void ClassPath::parseBootAndExtClasspath(const std::string &jreOption) {
     string jreDir = get_jre_dir(jreOption);
     string jreLibPath = join_path(jreDir, {"lib", "*"});
     bootClasspath = newWildcardEntry(jreLibPath);
+    cout << "jreLibPath: " << jreLibPath << endl;
 
     string jreExtPath = join_path(jreDir, {"lib", "ext", "*"});
     extClasspath = newWildcardEntry(jreExtPath);
+    cout << "jreExtPath: " << jreExtPath << endl;
+
 }
 
 void ClassPath::parseUserClasspath(const std::string &cpOption) {
@@ -83,6 +87,13 @@ void ClassPath::parseUserClasspath(const std::string &cpOption) {
     } else {
         userClasspath = newClasspathEntry(cpOption);
     }
+}
+
+ClassPath::~ClassPath() {
+    cout<<"~ClassPath"<<endl;
+    delete userClasspath;
+    delete bootClasspath;
+    delete extClasspath;
 }
 
 std::string get_jre_dir(const std::string &jreOption) {
@@ -94,7 +105,7 @@ std::string get_jre_dir(const std::string &jreOption) {
     }
     string javaHome = getEnv("JAVA_HOME");
     if (!javaHome.empty()) {
-        join_path(javaHome, {"jre"});
+        return join_path(javaHome, {"jre"});
     }
 
     throw "Can not find jre folder!";

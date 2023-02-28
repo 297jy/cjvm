@@ -18,6 +18,8 @@ public:
     virtual std::string readClass(const std::string &className) = 0;
 
     virtual std::string toString() = 0;
+
+    virtual ~ClassPathEntry() = default;
 };
 
 class ClassPath {
@@ -29,6 +31,7 @@ public:
 
     void parseUserClasspath(const std::string &cpOption);
 
+    ~ClassPath();
 private:
     ClassPathEntry *bootClasspath;
     ClassPathEntry *extClasspath;
@@ -65,7 +68,7 @@ public:
 
     void addEntry(ClassPathEntry *entry);
 
-    ~CompositeEntry();
+    ~CompositeEntry() override;
 
 private:
     std::vector<ClassPathEntry *> *entries = new std::vector<ClassPathEntry *>;
@@ -86,7 +89,7 @@ public:
 
     std::string toString() override;
 
-    ~JarEntry();
+    ~JarEntry() override;
 
 private:
     Zip *jarZip;

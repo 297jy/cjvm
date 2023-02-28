@@ -3,10 +3,10 @@
 //
 
 
-#include "classpath.h"
 #include <vector>
+#include <iostream>
 #include "str.h"
-
+#include "classpath.h"
 using namespace std;
 
 void CompositeEntry::init(const string &pathList) {
@@ -24,6 +24,7 @@ void CompositeEntry::addEntry(ClassPathEntry *entry) {
 }
 
 string CompositeEntry::readClass(const std::string &className) {
+    cout<<className<<endl;
     for (ClassPathEntry *e: *entries) {
         string data = e->readClass(className);
         if (!data.empty()) {
@@ -47,5 +48,9 @@ std::string CompositeEntry::toString() {
 }
 
 CompositeEntry::~CompositeEntry() {
+    cout<<"~CompositeEntry"<<endl;
+    for(auto* e: *entries){
+        delete e;
+    }
     delete entries;
 }

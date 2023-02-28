@@ -3,7 +3,7 @@
 //
 
 #include "classpath.h"
-
+#include <iostream>
 using namespace std;
 
 void JarEntry::init(const string &pathList) {
@@ -30,5 +30,6 @@ std::string JarEntry::toString() {
 }
 
 JarEntry::~JarEntry() {
+    cout<<"~JarEntry"<<endl;
     delete jarZip;
 }

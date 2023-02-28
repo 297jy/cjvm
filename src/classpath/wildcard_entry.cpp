@@ -4,6 +4,7 @@
 
 #include "classpath.h"
 #include <vector>
+#include <iostream>
 #include "str.h"
 #include "file.h"
 
@@ -11,12 +12,14 @@ using namespace std;
 
 void WildcardEntry::init(const std::string &path) {
     string baseDir = get_dir(path);
+    cout<<"baseDir: " <<baseDir<<endl;
     // 读取目录下的所有文件
-    vector<filesystem::path> &files = read_all_file(path);
+    vector<filesystem::path> &files = read_all_file(baseDir);
     for (auto &file: files) {
         // 将所有jar包都进行解压
         if (ends_with(file.filename().string(), ".jar") || ends_with(file.filename().string(), ".JAR")) {
             addEntry(newJarEntry(file.string()));
+            cout<<"jar file: " <<file.string()<<endl;
         }
     }
     delete &files;

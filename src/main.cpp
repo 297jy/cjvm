@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include "classpath.h"
 #include "str.h"
 #include "file.h"
 #include "zip.h"
@@ -14,14 +15,17 @@ int main(int nArgc, char *argv[]) {
     //cout << get_no_suffix_filename("/test/src.zip") << endl;
     //Zip zip("C:/project/cjvm/temp/charsets.jar");
     //vector<std::filesystem::path> *list = zip.readFileList();
-    //cout << "ÎÄ¼þ×Ü¸öÊý: " << list->size() << endl;
+    //cout << "æ–‡ä»¶æ€»ä¸ªæ•°: " << list->size() << endl;
     //cout << zip.readFile(R"(org\xml\sax\SAXNotSupportedException.java)") << endl;
 
-    char *p;
-    if ((p = getenv("JAVA_HOME"))) {
-        cout << "JAVA_HOME: " << p << endl;
-    }
+    //char *p;
+    //if ((p = getenv("JAVA_HOME"))) {
+    //cout << "JAVA_HOME: " << p << endl;
+    //}
 
     //cout<<contain("test", "t")<<endl;
+    ClassPath *p = parse("", "");
+    cout << "class: "<<p->readClass("java\\lang\\String") << endl;
+    delete p;
     return 0;
 }
