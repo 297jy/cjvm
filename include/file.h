@@ -12,7 +12,7 @@
 
 const char FILE_PATH_SEPARATOR = '/';
 
-const std::string TEMP_DIRECTORY = "C:/project/cjvm/temp/";
+const std::string TEMP_DIRECTORY = "C:/temp/";
 
 std::string get_no_suffix_filename(const std::string &path);
 

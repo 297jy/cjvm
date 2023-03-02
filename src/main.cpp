@@ -22,10 +22,11 @@ int main(int nArgc, char *argv[]) {
     //if ((p = getenv("JAVA_HOME"))) {
     //cout << "JAVA_HOME: " << p << endl;
     //}
-
+    //cout << replace_all("java.lang.string", "j", "j") << endl;
     //cout<<contain("test", "t")<<endl;
     ClassPath *p = parse("", "");
-    cout << "class: "<<p->readClass("java\\lang\\String") << endl;
+    cout << "xxxxclass: "<<p->readClass("java.lang.String") << endl;
     delete p;
     return 0;
+    //replace_all(className, ".", "\\");
 }

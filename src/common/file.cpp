@@ -37,7 +37,6 @@ bool remove_file(const string &path) {
 }
 
 bool remove_directory(const string &path) {
-    cout<<"remove_directory: "<<path<<endl;
     return std::filesystem::remove_all(path) > 0;
 }
 
@@ -82,7 +81,6 @@ vector<filesystem::path> &read_all_file(const string &path) {
     auto *fileList = new vector<filesystem::path>();
     filesystem::path p(path);
     if (!filesystem::exists(path)) {
-        cout << "file path not exits: " << path << endl;
         return *fileList;
     }
     get_all_file(p, *fileList);
@@ -112,7 +110,6 @@ bool create_directory(const string &path) {
         filesystem::create_directory(needCreateStack.top());
         needCreateStack.pop();
     }
-    cout<<"create_directory: "<< path<<endl;
     return true;
 }
 

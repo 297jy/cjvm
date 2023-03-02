@@ -18,4 +18,7 @@ bool starts_with(const std::string &str, const std::string &prefix);
 
 bool ends_with(const std::string &str, const std::string &suffix);
 
+std::string replace_all(const std::string &str, const std::string &oldVal, const std::string &nowVal);
+
+int search_str(const std::string &str, const std::string &target);
 #endif //CJVM_STR_H

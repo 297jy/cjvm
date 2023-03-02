@@ -28,7 +28,6 @@ vector<filesystem::path> *Zip::readFileList() {
     auto *filenames = new vector<filesystem::path>();
     for (const auto &file: *fileList) {
         filenames->push_back(file);
-        cout << "readFileList: " << file.string() << endl;
     }
     return filenames;
 }

@@ -3,6 +3,7 @@
 //
 
 #include "str.h"
+#include <iostream>
 
 using namespace std;
 
@@ -23,6 +24,81 @@ vector<string> &split_string(const string &str, const string &splits) {
     }
 
     return *v;
+}
+
+int *build_kmp_next(const string &str) {
+    int *next = new int[str.size()];
+    next[0] = 0;
+    int temp = 0;
+    int now = 1;
+    while (now < str.size()) {
+        if (str[now] == str[temp]) {
+            next[now] = temp + 1;
+            now++;
+            temp++;
+        } else {
+            if (temp > 0) {
+                temp = next[temp - 1];
+            } else {
+                next[now] = 0;
+                now++;
+            }
+        }
+    }
+    return next;
+}
+
+int search_str(const std::string &str, const std::string &target, const int *next) {
+    bool freeFlag = false;
+    if(next == nullptr) {
+        freeFlag = true;
+        next = build_kmp_next(target);
+    }
+    int pos = 0;
+    int tar = 0;
+    int res = -1;
+    while (pos < str.size()) {
+        if (str[pos] == target[tar]) {
+            pos++;
+            tar++;
+        } else {
+            if (tar > 0) {
+                tar = next[tar - 1];
+            } else {
+                pos++;
+            }
+        }
+        if (tar == target.size()) {
+            res = pos - tar;
+            break;
+        }
+    }
+    if(freeFlag) {
+        delete[] next;
+    }
+    return res;
+}
+
+int search_str(const std::string &str, const std::string &target) {
+    return search_str(str, target, nullptr);
+}
+
+string replace_all(const string &str, const string &oldVal, const string &nowVal) {
+    if (oldVal == nowVal) {
+        return str;
+    }
+    string newStr = str;
+    cout << newStr << " " << oldVal << " " << nowVal << endl;
+    int *next = build_kmp_next(nowVal);
+    while (true) {
+        int pos = search_str(newStr, oldVal, next);
+        if (pos == -1) {
+            delete[] next;
+            return newStr;
+        }
+        newStr = newStr.substr(0, pos) + nowVal +
+                 newStr.substr(pos + oldVal.size(), newStr.size() - pos - oldVal.size());
+    }
 }
 
 bool contain(const string &str, const string &substr) {

@@ -56,7 +56,8 @@ ClassPath *parse(const std::string &jreOption, const std::string &cpOption) {
 }
 
 string ClassPath::readClass(const std::string &className) {
-    string fullClassName = className + ".class";
+    string fullClassName = replace_all(className, ".", "\\") + ".class";
+    cout<<"fullClassName"<<fullClassName<<endl;
     string data;
     // 依次从根目录、扩展目录、用户目录查找要加载的类的字节码文件
     ClassPathEntry *entries[] = {bootClasspath, extClasspath, userClasspath};
@@ -73,11 +74,9 @@ void ClassPath::parseBootAndExtClasspath(const std::string &jreOption) {
     string jreDir = get_jre_dir(jreOption);
     string jreLibPath = join_path(jreDir, {"lib", "*"});
     bootClasspath = newWildcardEntry(jreLibPath);
-    cout << "jreLibPath: " << jreLibPath << endl;
 
     string jreExtPath = join_path(jreDir, {"lib", "ext", "*"});
     extClasspath = newWildcardEntry(jreExtPath);
-    cout << "jreExtPath: " << jreExtPath << endl;
 
 }
 
