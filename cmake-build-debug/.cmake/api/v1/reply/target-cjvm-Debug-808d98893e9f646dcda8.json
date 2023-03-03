@@ -75,7 +75,11 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				16,
+				17,
+				18,
+				20
 			]
 		}
 	],
@@ -121,7 +125,11 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				16,
+				17,
+				18,
+				20
 			]
 		},
 		{
@@ -139,7 +147,9 @@
 				6,
 				7,
 				8,
-				15
+				15,
+				19,
+				21
 			]
 		}
 	],
@@ -186,7 +196,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/zip.h",
+			"path" : "include/jar.h",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -203,7 +213,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/common/zip.cpp",
+			"path" : "src/common/jar.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -233,6 +243,40 @@
 		{
 			"backtrace" : 1,
 			"path" : "include/system.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/unzip.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/zip.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/date.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/date.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/common/byte.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/byte.h",
 			"sourceGroupIndex" : 2
 		}
 	],

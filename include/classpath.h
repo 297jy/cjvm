@@ -7,7 +7,7 @@
 
 #include <string>
 #include <vector>
-#include "zip.h"
+#include "jar.h"
 
 const std::string PATH_LIST_SEPARATOR = ";";
 
@@ -15,7 +15,7 @@ class ClassPathEntry {
 public:
     virtual void init(const std::string &path) = 0;
 
-    virtual std::string readClass(const std::string &className) = 0;
+    virtual std::vector<char> readClass(const std::string &className) = 0;
 
     virtual std::string toString() = 0;
 
@@ -25,7 +25,7 @@ public:
 class ClassPath {
 public:
 
-    std::string readClass(const std::string& className);
+    std::vector<char> readClass(const std::string& className);
 
     void parseBootAndExtClasspath(const std::string &jreOption);
 
@@ -49,7 +49,7 @@ public:
 
     void init(const std::string &path) override;
 
-    std::string readClass(const std::string &className) override;
+    std::vector<char> readClass(const std::string &className) override;
 
     std::string toString() override;
 
@@ -62,7 +62,7 @@ public:
 
     void init(const std::string &path) override;
 
-    std::string readClass(const std::string &className) override;
+    std::vector<char> readClass(const std::string &className) override;
 
     std::string toString() override;
 
@@ -85,14 +85,14 @@ public:
 
     void init(const std::string &path) override;
 
-    std::string readClass(const std::string &className) override;
+    std::vector<char> readClass(const std::string &className) override;
 
     std::string toString() override;
 
     ~JarEntry() override;
 
 private:
-    Zip *jarZip;
+    Jar *jarZip;
 };
 
 ClassPathEntry *newJarEntry(const std::string &pathList);

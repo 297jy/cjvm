@@ -7,19 +7,15 @@
 using namespace std;
 
 void JarEntry::init(const string &pathList) {
-    jarZip = new Zip(pathList);
+    jarZip = new Jar(pathList);
 }
 
 
-string JarEntry::readClass(const std::string &className) {
+vector<char> JarEntry::readClass(const std::string &className) {
     if (jarZip == nullptr) {
-        return "";
+        return {};
     }
-    string content = jarZip->readFile(className);
-    if (content.empty()) {
-        return "";
-    }
-    return content;
+    return jarZip->readFile(className);
 }
 
 std::string JarEntry::toString() {

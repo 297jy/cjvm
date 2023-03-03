@@ -55,19 +55,18 @@ ClassPath *parse(const std::string &jreOption, const std::string &cpOption) {
     return path;
 }
 
-string ClassPath::readClass(const std::string &className) {
-    string fullClassName = replace_all(className, ".", "\\") + ".class";
-    cout<<"fullClassName"<<fullClassName<<endl;
-    string data;
+std::vector<char> ClassPath::readClass(const std::string &className) {
+    cout << "readClass: "<< className<< endl;
+    string fullClassName = replace_all(className, ".", "/") + ".class";
     // 依次从根目录、扩展目录、用户目录查找要加载的类的字节码文件
     ClassPathEntry *entries[] = {bootClasspath, extClasspath, userClasspath};
     for (auto e: entries) {
-        data = e->readClass(fullClassName);
-        if (!data.empty()) {
+        std::vector<char> data = e->readClass(fullClassName);
+        if(!data.empty()) {
             return data;
         }
     }
-    return "";
+    return {};
 }
 
 void ClassPath::parseBootAndExtClasspath(const std::string &jreOption) {
@@ -89,7 +88,6 @@ void ClassPath::parseUserClasspath(const std::string &cpOption) {
 }
 
 ClassPath::~ClassPath() {
-    cout<<"~ClassPath"<<endl;
     delete userClasspath;
     delete bootClasspath;
     delete extClasspath;

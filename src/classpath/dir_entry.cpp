@@ -4,16 +4,19 @@
 
 #include "classpath.h"
 #include "file.h"
-
+#include "byte.h"
+#include <iostream>
 using namespace std;
 
 void DirEntry::init(const std::string &path) {
     baseDir = path;
 }
 
-std::string DirEntry::readClass(const std::string &className) {
+vector<char> DirEntry::readClass(const std::string &className) {
     string path = baseDir + FILE_PATH_SEPARATOR + className;
-    return read_file(path);
+    cout<<"dirClass: "<< path<<endl;
+    string res = read_file(path);
+    return to_bytes(res.data(), res.length());
 }
 
 std::string DirEntry::toString() {

@@ -23,15 +23,14 @@ void CompositeEntry::addEntry(ClassPathEntry *entry) {
     entries->push_back(entry);
 }
 
-string CompositeEntry::readClass(const std::string &className) {
-    cout<<className<<endl;
+std::vector<char> CompositeEntry::readClass(const std::string &className) {
     for (ClassPathEntry *e: *entries) {
-        string data = e->readClass(className);
-        if (!data.empty()) {
+        std::vector<char> data = e->readClass(className);
+        if(!data.empty()) {
             return data;
         }
     }
-    return "";
+    return {};
 }
 
 std::string CompositeEntry::toString() {
@@ -48,7 +47,6 @@ std::string CompositeEntry::toString() {
 }
 
 CompositeEntry::~CompositeEntry() {
-    cout<<"~CompositeEntry"<<endl;
     for(auto* e: *entries){
         delete e;
     }

@@ -88,7 +88,6 @@ string replace_all(const string &str, const string &oldVal, const string &nowVal
         return str;
     }
     string newStr = str;
-    cout << newStr << " " << oldVal << " " << nowVal << endl;
     int *next = build_kmp_next(nowVal);
     while (true) {
         int pos = search_str(newStr, oldVal, next);
